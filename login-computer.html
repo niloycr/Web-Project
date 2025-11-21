@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CCN-UST Computer Club | Login</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+</head>
+
+<body>
+
+    <!-- ===== HEADER ===== -->
+    <header class="sub-header-login">
+        <nav>
+            <a href="" class="logo">
+                <img src="Computer-image/computer-logo.png" alt="Club Logo" />
+            </a>
+            <div class="nav-links" id="navLinks">
+                <i class="fa fa-times" onclick="hideMenu()"></i>
+                <ul>
+                    <li><a href="index-computer.html">HOME</a></li>
+                    <li><a href="about-computer.html">ABOUT</a></li>
+                    <li><a href="committee-computer.html">COMMITTEE</a></li>
+                    <li><a href="notice-computer.html">NOTICE</a></li>
+                    <li><a href="events-computer.html">EVENTS&HIGHLIGHTS</a></li>
+                    <li><a href="membership-computer.html">MEMBERSHIP</a></li>
+                    <a href="login-computer.html" class="club-login-btn">Login</a>
+                </ul>
+            </div>
+            <i class="fa fa-bars" onclick="showMenu()"></i>
+        </nav>
+
+        <section class="lp-container">
+
+            <!-- Left Section -->
+            <div class="lp-left-box">
+                <div class="lp-content">
+                    <h1>Welcome!</h1>
+                    <h3>To Our Computer Club.</h3>
+                    <p>
+                        Welcome to the CCN-UST Computer Club! We are a vibrant community of students passionate about
+                        exploring the world of computers, from hardware to networking, troubleshooting, and innovative
+                        tech projects. Join us to learn, collaborate, and experience the exciting side of technology
+                        together.
+                    </p>
+
+
+                    <div class="lp-social">
+
+                        <a href="https://www.facebook.com/computerclub.ccnust"><i class="fab fa-facebook-f"></i></a>
+
+                    </div>
+                </div>
+            </div>
+
+            <!-- Right Section -->
+            <div class="lp-right-box">
+                <h2>Login</h2>
+
+                <div class="lp-input-box">
+                    <label>Email</label>
+                    <div class="lp-input-field">
+                        <input type="email">
+                        <i class="fa-solid fa-envelope"></i>
+                    </div>
+                </div>
+
+                <div class="lp-input-box">
+                    <label>Password</label>
+                    <div class="lp-input-field">
+                        <input type="password">
+                        <i class="fa-solid fa-lock"></i>
+                    </div>
+                </div>
+
+                <div class="lp-options">
+                    <label><input type="checkbox"> Remember me</label>
+                    <a href="#">Forgot password?</a>
+                </div>
+
+                <button class="lp-btn">Sign In</button>
+
+                <p class="lp-signup">Don't have an account? <a href="#">Create Account</a></p>
+            </div>
+
+        </section>
+
+
+    </header>
+
+
+    <script>
+        var navLinks = document.getElementById("navLinks");
+
+        function showMenu() {
+            navLinks.style.right = "0";
+        }
+
+        function hideMenu() {
+            navLinks.style.right = "-200px";
+        }
+    </script>
+</body>
+
+</html>

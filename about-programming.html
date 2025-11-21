@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CCN-UST Programming Club</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" />
+</head>
+
+<body>
+    <!-- ===== HEADER ===== -->
+    <header class="sub-header-about">
+        <nav>
+            <a href="" class="logo">
+                <img src="Programming-image/programming-club-logo.png" alt="Club Logo" />
+            </a>
+            <div class="nav-links" id="navLinks">
+                <i class="fa fa-times" onclick="hideMenu()"></i>
+                <ul>
+                    <li><a href="index-programming.html">HOME</a></li>
+                    <li><a href="about-programming.html">ABOUT</a></li>
+                    <li><a href="committee-programming.html">COMMITTEE</a></li>
+                    <li><a href="notice-programming.html">NOTICE</a></li>
+                    <li><a href="events-programming.html">EVENTS&HIGHLIGHTS</a></li>
+                    <li><a href="membership-programming.html">MEMBERSHIP</a></li>
+                    <a href="login-programming.html" class="club-login-btn">Login</a>
+                </ul>
+            </div>
+            <i class="fa fa-bars" onclick="showMenu()"></i>
+            <!-- Theme Toggle Button -->
+            <div class="theme-toggle">
+                <i class="fa-solid fa-sun" id="light-icon"></i>
+                <i class="fa-solid fa-moon" id="dark-icon"></i>
+            </div>
+        </nav>
+        <!-- ===== HERO SECTION ===== -->
+        <section class="hero-about">
+            <div class="container">
+                <h1>A&nbsp;B&nbsp;O&nbsp;U&nbsp;T&nbsp;&nbsp;U&nbsp;S</h1>
+            </div>
+        </section>
+    </header>
+
+
+    <!-- ===== OUR HISTORY ===== -->
+    <section class="about-content">
+        <div class="about-row">
+            <div class="about-text">
+                <h2>WELCOME TO CCN-UST PROGRAMMING CLUB</h2>
+                <p>
+                The CCN-UST Programming Club was founded to bring together students passionate about coding and
+                software development.
+                Over the years, we've organized workshops, hackathons, and competitions that have inspired
+                innovation
+                and teamwork among our members. We continue to grow every year, welcoming students who want to
+                explore
+                the endless possibilities in programming and make an impact both in their community and the tech
+                world.
+            </p>
+                <!--<a href="#" class="about-btn">EXPLORE NOW</a>-->
+            </div>
+            <div class="about-image">
+                <img src="Programming-image/about-page-img.jpg" alt="About us image" />
+            </div>
+        </div>
+    </section>
+
+
+    <!-- ===== WHY JOIN US ===== -->
+    <section class="why-join">
+        <div class="container">
+            <h2>Why Join CCN-UST Programming Club?</h2>
+            <div class="grid-3">
+                <div class="card">
+                    <i class="fa-solid fa-lightbulb"></i>
+                    <h3>Innovative Learning</h3>
+                    <p>Gain hands-on experience through coding workshops, software projects, and collaborative challenges.</p>
+                </div>
+                <div class="card">
+                    <i class="fa-solid fa-people-group"></i>
+                    <h3>Networking</h3>
+                    <p>Connect with like-minded students, alumni, and industry professionals for mentorship and guidance.</p>
+                </div>
+                <div class="card">
+                    <i class="fa-solid fa-trophy"></i>
+                    <h3>Recognition</h3>
+                    <p>Showcase your skills, win competitions, and earn awards that can boost your academic and
+                        professional journey.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+
+
+    <!-- =================== FOOTER ===== -->
+    <footer class="footer">
+        <h4>Contact Us</h4>
+        <p>Have questions or want to collaborate? Feel free to reach out to us!</p>
+
+        <div class="contact-info">
+            <p><i class="fa-solid fa-location-dot"></i> CCN University of Science & Technology, Cumilla, Bangladesh</p>
+            <p><i class="fa-solid fa-envelope"></i> programmingclub@ccnust.edu.bd</p>
+            <p><i class="fa-solid fa-phone"></i> +880 1700-00000</p>
+        </div>
+
+        <div class="icons">
+            <a href="https://www.facebook.com/profile.php?id=61569854825916" target="_blank"><i
+                    class="fa-brands fa-facebook"></i></a>
+
+        </div>
+
+        <p class="footer-bottom">
+            © 2025 CCN-UST Programming Club | All Rights Reserved
+        </p>
+    </footer>
+
+    <!-- ===== JS ===== -->
+    <!-- ===== JS ===== -->
+    <script>
+        const navLinks = document.getElementById("navLinks");
+        const lightIcon = document.getElementById("light-icon");
+        const darkIcon = document.getElementById("dark-icon");
+        const body = document.body;
+
+        // ===== MOBILE MENU =====
+        function showMenu() {
+            navLinks.style.right = "0";
+        }
+
+        function hideMenu() {
+            navLinks.style.right = "-200px";
+        }
+
+        // ===== THEME TOGGLE =====
+        function updateIcons() {
+            if (body.classList.contains("dark-mode")) {
+                darkIcon.style.display = "none";
+                lightIcon.style.display = "inline-block";
+            } else {
+                lightIcon.style.display = "none";
+                darkIcon.style.display = "inline-block";
+            }
+        }
+
+        // Check localStorage for theme
+        if (localStorage.getItem("theme") === "dark") {
+            body.classList.add("dark-mode");
+        }
+
+        updateIcons();
+
+        lightIcon.addEventListener("click", () => {
+            body.classList.remove("dark-mode");
+            localStorage.setItem("theme", "light");
+            updateIcons();
+        });
+
+        darkIcon.addEventListener("click", () => {
+            body.classList.add("dark-mode");
+            localStorage.setItem("theme", "dark");
+            updateIcons();
+        });
+    </script>
+
+
+</body>
+
+</html>

@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CCN-UST Programming Club</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" />
+</head>
+
+<body>
+    <!-- ===== HEADER ===== -->
+    <header class="sub-header-notice">
+        <nav>
+            <a href="" class="logo">
+                <img src="Programming-image/programming-club-logo.png" alt="Club Logo" />
+            </a>
+            <div class="nav-links" id="navLinks">
+                <i class="fa fa-times" onclick="hideMenu()"></i>
+                <ul>
+                    <li><a href="index-programming.html">HOME</a></li>
+                    <li><a href="about-programming.html">ABOUT</a></li>
+                    <li><a href="committee-programming.html">COMMITTEE</a></li>
+                    <li><a href="notice-programming.html">NOTICE</a></li>
+                    <li><a href="events-programming.html">EVENTS&HIGHLIGHTS</a></li>
+                    <li><a href="membership-programming.html">MEMBERSHIP</a></li>
+                    <a href="login-programming.html" class="club-login-btn">Login</a>
+                </ul>
+            </div>
+            <i class="fa fa-bars" onclick="showMenu()"></i>
+            <!-- Theme Toggle Button -->
+            <div class="theme-toggle">
+                <i class="fa-solid fa-sun" id="light-icon"></i>
+                <i class="fa-solid fa-moon" id="dark-icon"></i>
+            </div>
+        </nav>
+        <!-- ===== HERO SECTION ===== -->
+        <section class="hero-about">
+            <div class="container">
+                <h1>N&nbsp;O&nbsp;T&nbsp;I&nbsp;C&nbsp;E</h1>
+            </div>
+        </section>
+    </header>
+
+
+    <!-- ===== NOTICE SECTION ===== -->
+    <section class="notice">
+        <div class="container">
+            <h2>Recent Notices</h2>
+
+            <div class="notice-container">
+
+                <div class="notice-card">
+                    <div class="notice-date">
+                        <span>25</span>
+                        <p>OCT 2025</p>
+                    </div>
+                    <img src="Programming-image/virtual-contest.jpg" alt="Club Annual Meeting" class="notice-image" />
+                    <div class="notice-content">
+                        <h3>Virtual Contest</h3>
+                        <p>CCN-UST Programming Club Presents<br>
+                            💻 Virtual Coding Competition 2025💥<br>
+                            ☑️ Open for all CCN-UST students
+                            Don’t miss it.</p>
+                        <a href="https://forms.gle/SjdCzkGXfXrfMG2y5"
+                            class="register-button">REGISTER</a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+
+
+
+    <!-- =================== FOOTER ===== -->
+    <footer class="footer">
+        <h4>Contact Us</h4>
+        <p>Have questions or want to collaborate? Feel free to reach out to us!</p>
+
+        <div class="contact-info">
+            <p><i class="fa-solid fa-location-dot"></i> CCN University of Science & Technology, Cumilla, Bangladesh</p>
+            <p><i class="fa-solid fa-envelope"></i> programmingclub@ccnust.edu.bd</p>
+            <p><i class="fa-solid fa-phone"></i> +880 1700-00000</p>
+        </div>
+
+        <div class="icons">
+            <a href="https://www.facebook.com/profile.php?id=61569854825916" target="_blank"><i
+                    class="fa-brands fa-facebook"></i></a>
+
+        </div>
+
+        <p class="footer-bottom">
+            © 2025 CCN-UST Programming Club | All Rights Reserved
+        </p>
+    </footer>
+
+    <!-- ===== JS ===== -->
+    <!-- ===== JS ===== -->
+    <script>
+        const navLinks = document.getElementById("navLinks");
+        const lightIcon = document.getElementById("light-icon");
+        const darkIcon = document.getElementById("dark-icon");
+        const body = document.body;
+
+        // ===== MOBILE MENU =====
+        function showMenu() {
+            navLinks.style.right = "0";
+        }
+
+        function hideMenu() {
+            navLinks.style.right = "-200px";
+        }
+
+        // ===== THEME TOGGLE =====
+        function updateIcons() {
+            if (body.classList.contains("dark-mode")) {
+                darkIcon.style.display = "none";
+                lightIcon.style.display = "inline-block";
+            } else {
+                lightIcon.style.display = "none";
+                darkIcon.style.display = "inline-block";
+            }
+        }
+
+        // Check localStorage for theme
+        if (localStorage.getItem("theme") === "dark") {
+            body.classList.add("dark-mode");
+        }
+
+        updateIcons();
+
+        lightIcon.addEventListener("click", () => {
+            body.classList.remove("dark-mode");
+            localStorage.setItem("theme", "light");
+            updateIcons();
+        });
+
+        darkIcon.addEventListener("click", () => {
+            body.classList.add("dark-mode");
+            localStorage.setItem("theme", "dark");
+            updateIcons();
+        });
+    </script>
+
+
+</body>
+
+</html>

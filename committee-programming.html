@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CCN-UST Programming Club</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" />
+</head>
+
+<body>
+    <!-- ===== HEADER ===== -->
+    <header class="sub-header-committe">
+        <nav>
+            <a href="" class="logo">
+                <img src="Programming-image/programming-club-logo.png" alt="Club Logo" />
+            </a>
+            <div class="nav-links" id="navLinks">
+                <i class="fa fa-times" onclick="hideMenu()"></i>
+                <ul>
+                    <li><a href="index-programming.html">HOME</a></li>
+                    <li><a href="about-programming.html">ABOUT</a></li>
+                    <li><a href="committee-programming.html">COMMITTEE</a></li>
+                    <li><a href="notice-programming.html">NOTICE</a></li>
+                    <li><a href="events-programming.html">EVENTS&HIGHLIGHTS</a></li>
+                    <li><a href="membership-programming.html">MEMBERSHIP</a></li>
+                    <a href="login-programming.html" class="club-login-btn">Login</a>
+                </ul>
+            </div>
+            <i class="fa fa-bars" onclick="showMenu()"></i>
+            <!-- Theme Toggle Button -->
+            <div class="theme-toggle">
+                <i class="fa-solid fa-sun" id="light-icon"></i>
+                <i class="fa-solid fa-moon" id="dark-icon"></i>
+            </div>
+        </nav>
+        <!-- ===== HERO SECTION ===== -->
+        <section class="hero-about">
+            <div class="container">
+                <h1>C&nbsp;O&nbsp;M&nbsp;M&nbsp;I&nbsp;T&nbsp;T&nbsp;E&nbsp;E</h1>
+                <h2>M&nbsp;&nbsp;&nbsp;&nbsp;E&nbsp;&nbsp;&nbsp;&nbsp;M&nbsp;&nbsp;&nbsp;&nbsp;B&nbsp;&nbsp;&nbsp;&nbsp;E&nbsp;&nbsp;&nbsp;&nbsp;R&nbsp;&nbsp;&nbsp;&nbsp;S
+                </h2>
+            </div>
+        </section>
+    </header>
+
+
+
+    <!-- ===== ADVISORS SECTION ===== -->
+    <section class="advisors">
+        <div class="container">
+            <h2>Advisors</h2>
+            <div class="advisor-list">
+                <div class="advisor-card">
+                    <img src="Programming-image/advisor-programming1.png" alt="Advisor 1">
+                    <h3>Rabiol Amin</h3>
+                    <p>Lecturer</p>
+                    <p>Department of CSE</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== EXECUTIVE COMMITTEE SECTION ===== -->
+    <section class="executive-committee">
+        <div class="container">
+            <h2>Executive Committee</h2>
+            <div class="committee-grid">
+                <div class="member-card">
+                    <img src="Programming-image/president.png" alt="President">
+                    <h3>Bayzid Ahmed</h3>
+                    <p>Department of CSE</p>
+                    <p>President</p>
+                </div>
+                <div class="member-card">
+                    <img src="Programming-image/vice-president-programming.png" alt="Vice President">
+                    <h3>Badhon Admed</h3>
+                    <p>Department of CSE</p>
+                    <p>Vice President</p>
+                </div>
+                <div class="member-card">
+                    <img src="Programming-image/vice-president-programming1.png" alt="General Secretary">
+                    <h3>Abir Ahmmed Chowdhury</h3>
+                    <p>Department of CSE</p>
+                    <p>Vice President</p>
+                </div>
+                <div class="member-card">
+                    <img src="Programming-image/joint-secratery-programming.png" alt="Joint Secretary">
+                    <h3>Kazi Safiur Rahman</h3>
+                    <p>Department of CSE</p>
+                    <p>Joint Secretary</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+
+    <!-- =================== FOOTER ===== -->
+    <footer class="footer">
+        <h4>Contact Us</h4>
+        <p>Have questions or want to collaborate? Feel free to reach out to us!</p>
+
+        <div class="contact-info">
+            <p><i class="fa-solid fa-location-dot"></i> CCN University of Science & Technology, Cumilla, Bangladesh</p>
+            <p><i class="fa-solid fa-envelope"></i> programmingclub@ccnust.edu.bd</p>
+            <p><i class="fa-solid fa-phone"></i> +880 1700-00000</p>
+        </div>
+
+        <div class="icons">
+            <a href="https://www.facebook.com/profile.php?id=61569854825916" target="_blank"><i
+                    class="fa-brands fa-facebook"></i></a>
+
+        </div>
+
+        <p class="footer-bottom">
+            © 2025 CCN-UST Programming Club | All Rights Reserved
+        </p>
+    </footer>
+
+    <!-- ===== JS ===== -->
+    <!-- ===== JS ===== -->
+    <script>
+        const navLinks = document.getElementById("navLinks");
+        const lightIcon = document.getElementById("light-icon");
+        const darkIcon = document.getElementById("dark-icon");
+        const body = document.body;
+
+        // ===== MOBILE MENU =====
+        function showMenu() {
+            navLinks.style.right = "0";
+        }
+
+        function hideMenu() {
+            navLinks.style.right = "-200px";
+        }
+
+        // ===== THEME TOGGLE =====
+        function updateIcons() {
+            if (body.classList.contains("dark-mode")) {
+                darkIcon.style.display = "none";
+                lightIcon.style.display = "inline-block";
+            } else {
+                lightIcon.style.display = "none";
+                darkIcon.style.display = "inline-block";
+            }
+        }
+
+        // Check localStorage for theme
+        if (localStorage.getItem("theme") === "dark") {
+            body.classList.add("dark-mode");
+        }
+
+        updateIcons();
+
+        lightIcon.addEventListener("click", () => {
+            body.classList.remove("dark-mode");
+            localStorage.setItem("theme", "light");
+            updateIcons();
+        });
+
+        darkIcon.addEventListener("click", () => {
+            body.classList.add("dark-mode");
+            localStorage.setItem("theme", "dark");
+            updateIcons();
+        });
+    </script>
+
+
+</body>
+
+</html>

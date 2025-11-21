@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CCN-UST Clubs</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <section class="club-homepage dark-mode">
+        <div class="club-container fade-in">
+
+            <img src="image/ccn-logo.png" alt="CCN-UST Logo" class="club-logo">
+
+            <h1 class="university-name">CCN University of Science & Technology</h1>
+
+            <h2 class="club-title">Computer Club & Programming Club</h2>
+            <h3>Explore Our Clubs</h3>
+          
+
+            <div class="button-group">
+                <a href="index-computer.html" class="enter-btn">
+                    <span class="icon">💻</span>
+                    Enter Computer Club
+                </a>
+
+                <a href="index-programming.html" class="enter-btn">
+                    <span class="icon">🧠</span>
+                    Enter Programming Club
+                </a>
+            </div>
+        </div>
+    </section>
+    <script>
+    document.addEventListener("DOMContentLoaded", function () {
+        const toggleBtn = document.querySelector(".toggle-dark-mode");
+        const wrapper = document.querySelector(".club-homepage");
+
+        toggleBtn.addEventListener("click", function () {
+            wrapper.classList.toggle("dark-mode");
+        });
+    });
+</script>
+
+
+</body>
+</html>

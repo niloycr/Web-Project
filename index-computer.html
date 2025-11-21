@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CCN-UST Computer Club</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" />
+</head>
+
+<body>
+    <!-- ===== HEADER ===== -->
+    <header class="header"
+        style="background-image: linear-gradient(rgba(4, 4, 9, 0.7), rgba(4, 4, 9, 0.7)), url('Computer-image/Computer-Club.avif');">
+        <nav>
+            <a href="" class="logo">
+                <img src="Computer-image/computer-logo.png" alt="Club Logo" />
+            </a>
+            <div class="nav-links" id="navLinks">
+                <i class="fa fa-times" onclick="hideMenu()"></i>
+                <ul>
+                    <li><a href="index-computer.html">HOME</a></li>
+                    <li><a href="about-computer.html">ABOUT</a></li>
+                    <li><a href="committee-computer.html">COMMITTEE</a></li>
+                    <li><a href="notice-computer.html">NOTICE</a></li>
+                    <li><a href="events-computer.html">EVENTS&HIGHLIGHTS</a></li>
+                    <li><a href="membership-computer.html">MEMBERSHIP</a></li>
+                    <a href="login-computer.html" class="club-login-btn">Login</a>
+                </ul>
+            </div>
+            <i class="fa fa-bars" onclick="showMenu()"></i>
+            <!-- Theme Toggle Button -->
+            <div class="theme-toggle">
+                <i class="fa-solid fa-sun" id="light-icon"></i>
+                <i class="fa-solid fa-moon" id="dark-icon"></i>
+            </div>
+
+        </nav>
+
+        <div class="text-box">
+            <h1>CCN-UST Computer Club</h1>
+            <p>
+                Join us in our mission to connect students through shared technological interests, explore the latest in
+                computers and hardware, promote digital literacy, and use computing power to make a positive impact on
+                our community.
+            </p>
+            <a href="membership-computer.html" class="hero-btn">Click Here To Get Membership</a>
+        </div>
+    </header>
+
+    <!-- ===== ACTIVITIES ===== -->
+   
+<section class="computer-programmingClub">
+    <h1>Our Activities & Events</h1>
+    <p>
+        Welcome to the <strong>CCN-UST Computer Club</strong> — a community
+        of passionate learners and innovators who believe in the power of technology to
+        make a difference. Our club connects students with a shared love for computers,
+        hardware, AI, and digital creativity.
+    </p>
+
+    <div class="row">
+        <div class="club-col">
+            <h3>Our Mission</h3>
+            <p>
+                Join us in our mission to connect students through shared technological interests,
+                promote digital literacy, and use computing power to make a positive impact on our community.
+            </p>
+        </div>
+
+        <div class="club-col">
+            <h3>What We Do</h3>
+            <p>
+                We organize workshops on computer hardware, networking, AI projects, tech talks,
+                and coding sessions — giving members the chance to explore, create, and innovate
+                in a collaborative environment.
+            </p>
+        </div>
+
+        <div class="club-col">
+            <h3>Why Join Us</h3>
+            <p>
+                Become part of a team that values creativity, collaboration, and tech excellence.
+                Get mentorship, hands-on experience, and the chance to represent CCN-UST
+                in national and international technology competitions.
+            </p>
+        </div>
+    </div>
+</section>
+
+    <!-- ===== GALLERY ===== -->
+    <section class="gallery">
+        <h1>Gallery</h1>
+        <p>Capturing the best moments of our club journey</p>
+
+        <div class="row">
+            <div class="gallery-col">
+                <img src="Computer-image/workshop.jpg" alt="Workshop on Basic Computer" />
+                <div class="layer">
+                    <h3>Workshop on Basic Computer</h3>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== CTA ===== -->
+    <section class="cat">
+        <h1>Join Our Facebook Group<br />From Anywhere In The World</h1>
+        <a href="https://www.facebook.com/computerclub.ccnust" class="hero-btn">JOIN US</a>
+    </section>
+
+    <!-- ===== FOOTER ===== -->
+    <footer class="footer">
+        <h4>Contact Us</h4>
+        <p>Have questions or want to collaborate? Feel free to reach out to us!</p>
+
+        <div class="contact-info">
+            <p><i class="fa-solid fa-location-dot"></i> CCN University of Science & Technology, Cumilla, Bangladesh</p>
+            <p><i class="fa-solid fa-envelope"></i> computerclub@ccnust.edu.bd</p>
+            <p><i class="fa-solid fa-phone"></i> +880 1700-00000</p>
+        </div>
+
+        <div class="icons">
+            <a href="https://www.facebook.com/computerclub.ccnust" target="_blank"><i
+                    class="fa-brands fa-facebook"></i></a>
+
+        </div>
+
+        <p class="footer-bottom">
+            © 2025 CCN-UST Computer Club | All Rights Reserved
+        </p>
+    </footer>
+
+    <!-- ===== JS ===== -->
+    <script>
+        const navLinks = document.getElementById("navLinks");
+        const lightIcon = document.getElementById("light-icon");
+        const darkIcon = document.getElementById("dark-icon");
+        const body = document.body;
+
+        // ===== MOBILE MENU =====
+        function showMenu() {
+            navLinks.style.right = "0";
+        }
+
+        function hideMenu() {
+            navLinks.style.right = "-200px";
+        }
+
+        // ===== THEME TOGGLE =====
+        // Check local storage to keep theme after reload
+        if (localStorage.getItem("theme") === "dark") {
+            body.classList.add("dark-mode");
+        }
+
+        // Toggle between light and dark mode
+        lightIcon.addEventListener("click", () => {
+            body.classList.remove("dark-mode");
+            localStorage.setItem("theme", "light");
+        });
+
+        darkIcon.addEventListener("click", () => {
+            body.classList.add("dark-mode");
+            localStorage.setItem("theme", "dark");
+        });
+    </script>
+
+
+
+</body>
+
+</html>

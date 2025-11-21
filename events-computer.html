@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CCN-UST Computer Club</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" />
+</head>
+
+<body>
+    <!-- ===== HEADER ===== -->
+    <header class="sub-header-notice">
+        <nav>
+            <a href="" class="logo">
+                <img src="Computer-image/computer-logo.png" alt="Club Logo" />
+            </a>
+            <div class="nav-links" id="navLinks">
+                <i class="fa fa-times" onclick="hideMenu()"></i>
+                <ul>
+                    <li><a href="index-computer.html">HOME</a></li>
+                    <li><a href="about-computer.html">ABOUT</a></li>
+                    <li><a href="committee-computer.html">COMMITTEE</a></li>
+                    <li><a href="notice-computer.html">NOTICE</a></li>
+                    <li><a href="events-computer.html">EVENTS&HIGHLIGHTS</a></li>
+                    <li><a href="membership-computer.html">MEMBERSHIP</a></li>
+                    <a href="login-computer.html" class="club-login-btn">Login</a>
+                </ul>
+            </div>
+            <i class="fa fa-bars" onclick="showMenu()"></i>
+            <!-- Theme Toggle Button -->
+            <div class="theme-toggle">
+                <i class="fa-solid fa-sun" id="light-icon"></i>
+                <i class="fa-solid fa-moon" id="dark-icon"></i>
+            </div>
+        </nav>
+        <!-- ===== HERO SECTION ===== -->
+        <section class="hero-about">
+            <div class="container">
+                <h1>EVENTS & HIGHLIGHTS</h1>
+
+        </section>
+    </header>
+
+    <!-- ===== NEWSPAPER SECTION ===== -->
+    <section class="newspaper-section">
+        <div class="news-container">
+
+            <!-- News Block 1 -->
+            <article class="news-card">
+                <img src="Computer-image/scavenger-hunt.jpg" alt="Event Image" />
+                <h2>Scavenger Hunt 2025</h2>
+                <p class="date">Published: Jan 12, 2025</p>
+                <p>
+                    CCN-UST Computer Club
+                    This year’s hunt was thrilling, competitive, and full of excitement!
+                    A total of 12 teams participated, and after 50 minutes of searching, solving, and running around the
+                    campus…<br>
+                    🏆 Team Ocean-3 finally discovered the treasure!<br>
+                    Winners:<br>
+                    ✨ Khairun Nahar<br>
+                    ✨ Sitara Sumaiya<br>
+                    ✨ Jannatul Nusrat<br>
+                    Congratulations to this amazing team - your teamwork and determination truly paid off! 🎉🔥
+                    At the same time, a huge shout-out to all participants - everyone worked really hard, and many teams
+                    even reached the final clue!<br>
+                    Your energy, effort, and enthusiasm made the event truly awesome. 💙
+                </p>
+            </article>
+
+            <article class="news-card">
+                <img src="Computer-image/typing-competition.jpg" alt="Event Image" />
+                <h2>Typing Master 2025</h2>
+                <p class="date">Published: November 15, 2025</p>
+                <p>
+                    CCN-UST Computer Club<br>
+                    The Typing Master 2025 competition was thrilling, competitive, and full of excitement!<br>
+                    The event brought together the fastest and most accurate typists of our university…<br>
+                    🏆 Congratulations to the top three winners:<br>
+                    ✨ Mohibul Haque Jesan<br>
+                    ✨ Ashikur Rahman Ashik<br>
+                    ✨ Mst. Khairun Nahar<br>
+                    Your outstanding performance showcased incredible speed, accuracy, and skill! 🎉<br>
+                    A huge shout-out to all participants - everyone put in amazing effort and made the competition truly
+                    memorable. 💙<br>
+                    The CCN-UST Computer Club is proud to foster such talent and friendly competition among students. 🚀
+                </p>
+
+            </article>
+
+
+        </div>
+    </section>
+
+
+    <!-- =================== FOOTER ===== -->
+    <footer class="footer">
+        <h4>Contact Us</h4>
+        <p>Have questions or want to collaborate? Feel free to reach out to us!</p>
+
+        <div class="contact-info">
+            <p><i class="fa-solid fa-location-dot"></i> CCN University of Science & Technology, Cumilla, Bangladesh</p>
+            <p><i class="fa-solid fa-envelope"></i> computerclub@ccnust.edu.bd</p>
+            <p><i class="fa-solid fa-phone"></i> +880 1700-00000</p>
+        </div>
+
+        <div class="icons">
+            <a href="https://www.facebook.com/computerclub.ccnust" target="_blank"><i
+                    class="fa-brands fa-facebook"></i></a>
+
+        </div>
+
+        <p class="footer-bottom">
+            © 2025 CCN-UST Computer Club | All Rights Reserved
+        </p>
+    </footer>
+
+    <!-- ===== JS ===== -->
+    <!-- ===== JS ===== -->
+    <script>
+        const navLinks = document.getElementById("navLinks");
+        const lightIcon = document.getElementById("light-icon");
+        const darkIcon = document.getElementById("dark-icon");
+        const body = document.body;
+
+        // ===== MOBILE MENU =====
+        function showMenu() {
+            navLinks.style.right = "0";
+        }
+
+        function hideMenu() {
+            navLinks.style.right = "-200px";
+        }
+
+        // ===== THEME TOGGLE =====
+        function updateIcons() {
+            if (body.classList.contains("dark-mode")) {
+                darkIcon.style.display = "none";
+                lightIcon.style.display = "inline-block";
+            } else {
+                lightIcon.style.display = "none";
+                darkIcon.style.display = "inline-block";
+            }
+        }
+
+        // Check localStorage for theme
+        if (localStorage.getItem("theme") === "dark") {
+            body.classList.add("dark-mode");
+        }
+
+        updateIcons();
+
+        lightIcon.addEventListener("click", () => {
+            body.classList.remove("dark-mode");
+            localStorage.setItem("theme", "light");
+            updateIcons();
+        });
+
+        darkIcon.addEventListener("click", () => {
+            body.classList.add("dark-mode");
+            localStorage.setItem("theme", "dark");
+            updateIcons();
+        });
+    </script>
+
+
+</body>
+
+</html>
